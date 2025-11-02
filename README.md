@@ -2,7 +2,7 @@
 
 📦 セットアップ手順
 1️⃣ クローン
-git clone https://github.com/yourname/sns-app.git
+git clone git@github.com:KOUSEI-dot/sns-app.git
 cd sns-app/backend
 
 2️⃣ 環境変数設定
