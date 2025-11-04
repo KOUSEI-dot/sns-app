@@ -23,6 +23,7 @@ composer install
 cp .env.example .env
 
 4️⃣ アプリケーションキー生成
+
 php artisan key:generate
 
 5️⃣ マイグレーション & シーディング
@@ -42,6 +43,7 @@ docker compose up -d
 フロントエンドをセットアップします。
 
 cd ../frontend
+
 npm install
 
 8️⃣ フロントエンド開発サーバー起動
