@@ -50,7 +50,9 @@ npm install
 npm run dev
 
 ブラウザで以下にアクセス 👇
-🔗 http://localhost:5173
+🔗 http://localhost:5173/register
+
+🔗 http://localhost:5173/login
 
 🔐 認証仕様（Sanctum）
 
