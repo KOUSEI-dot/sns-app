@@ -4,8 +4,10 @@ Laravel × Vue（Nuxt 構成）で構築した SNS 風アプリケーション�
 ユーザー登録・ログイン・投稿・コメント・いいね機能を実装しています。
 
 📦 セットアップ手順
+
 1️⃣ クローン
 git clone git@github.com:KOUSEI-dot/sns-app.git
+
 cd sns-app/backend
 
 2️⃣ 依存関係インストール（バックエンド）
