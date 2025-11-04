@@ -1,47 +1,52 @@
-# sns-app
+🐳 sns-app
+
+Laravel × Vue（Nuxt 構成）で構築した SNS 風アプリケーションです。
+ユーザー登録・ログイン・投稿・コメント・いいね機能を実装しています。
 
 📦 セットアップ手順
 1️⃣ クローン
 git clone git@github.com:KOUSEI-dot/sns-app.git
 cd sns-app/backend
 
-2️⃣ 環境変数設定
+2️⃣ 依存関係インストール（バックエンド）
+
+Laravel 実行に必要なパッケージをインストールします。
+
+composer install
+
+3️⃣ 環境変数設定
 
 .env.example をコピーして .env を作成します。
 
 cp .env.example .env
 
-例：
-APP_NAME=Laravel
-APP_ENV=local
-APP_KEY=
-APP_DEBUG=true
-APP_URL=http://localhost
-
-DB_CONNECTION=mysql
-DB_HOST=mysql
-DB_PORT=3306
-DB_DATABASE=laravel_db
-DB_USERNAME=laravel_user
-DB_PASSWORD=laravel_pass
-
-SESSION_DRIVER=database
-SESSION_DOMAIN=localhost
-
-CORS_ALLOWED_ORIGINS=http://localhost:3000
-
-3️⃣ アプリケーションキー生成
+4️⃣ アプリケーションキー生成
 php artisan key:generate
 
-4️⃣ マイグレーション & シーディング
+5️⃣ マイグレーション & シーディング
+
+データベースを初期化します。
+
 php artisan migrate --seed
 
-5️⃣ サーバー起動
-php artisan serve
+6️⃣ サーバー起動
 
-または Docker 使用時：
+バックエンドを Docker で立ち上げます。
 
 docker compose up -d
+
+7️⃣ 依存関係インストール（フロントエンド）
+
+フロントエンドをセットアップします。
+
+cd ../frontend
+npm install
+
+8️⃣ フロントエンド開発サーバー起動
+npm run dev
+
+ブラウザで以下にアクセス 👇
+🔗 http://localhost:5173
 
 🔐 認証仕様（Sanctum）
 
@@ -66,10 +71,10 @@ docker compose up -d
 
 すべての Feature テストが通過済みです ✅
 
-実行コマンド：
 php artisan test
 
 結果例：
+
 Tests: 17 passed (100%)
 
 🗂 ディレクトリ構成
@@ -95,6 +100,14 @@ backend/
 │ └── CommentTest.php
 └── ...
 
+frontend/
+├── src/
+│ ├── components/
+│ ├── views/
+│ ├── router/
+│ └── validation/
+└── ...
+
 🧱 開発メモ
 
 Sanctum 使用時、SPA 認証では TransientToken が発行されるため
@@ -102,7 +115,7 @@ logout() では method_exists() ガードを実装済み。
 
 コメント投稿は text を受け取り、content カラムに保存。
 
-全 API は JSON レスポンスを返す（フロント通信対応済み）。
+全 API は JSON レスポンスで返却され、フロント通信に対応。
 
 👨‍💻 作者
 名前 役割
